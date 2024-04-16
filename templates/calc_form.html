@@ -1,20 +1,23 @@
 <html>
 <body>
 
-<label for="currencies">Wybierz walutę:</label>
-<select name="currencies" id="currencies">
-    {% for i in curr_data %}
-    <option>{{ i['currency'] }}</option>
-    {% endfor %}  
-</select>
-
 <form method="post">
+    <label for="currencies">Wybierz walutę:</label>
+    <select name="currencies" id="currencies">
+        {% for i in curr_data %}
+        <option value="{{ i['code'] }}">{{ i['code'] }}</option>
+        {% endfor %}  
+    </select>
+
     <p><label for="element">Wprowadź kwotę:</label></p>
     <input id="element" name="element"/><br>
+    
     <input type="submit" value="Prześlij"/>
 </form>
 
+{% if transaction_cost is defined %}
 <p>Koszt zakupu waluty: {{ transaction_cost }}</p>
+{% endif %}
 
 </body>
 </html>
