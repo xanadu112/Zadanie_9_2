@@ -1,11 +1,19 @@
-<html>
+<!DOCTYPE html>
+<html lang="pl">
+    <head>
+        <meta charset="utf-8">
+        <title>Kalkulator walutowy</title>
+        <link rel="stylesheet" href="{{ url_for('static', filename='style.css') }}">
+    </head>
 <body>
+
+<h2 class="title">Kalkulator walut</h2>
 
 <form method="post">
     <label for="currencies">Wybierz walutę:</label>
     <select name="currencies" id="currencies">
-        {% for i in curr_data %}
-        <option value="{{ i['code'] }}">{{ i['code'] }}</option>
+        {% for i in codes %}
+        <option>{{ i }}</option>
         {% endfor %}  
     </select>
 
@@ -15,9 +23,7 @@
     <input type="submit" value="Prześlij"/>
 </form>
 
-{% if transaction_cost is defined %}
 <p>Koszt zakupu waluty: {{ transaction_cost }}</p>
-{% endif %}
 
 </body>
 </html>
