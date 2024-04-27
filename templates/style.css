@@ -1,0 +1,54 @@
+.title {
+    color: green;
+    text-align: center;
+}
+
+
+form {
+    margin: 20px auto;
+    width: 300px;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+    color: green; 
+}
+
+
+select {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+
+input[type="text"] {
+    width: 100%;
+    padding: 8px;
+    margin-bottom: 10px;
+    border: 1px solid green;
+    border-radius: 5px;
+}
+
+
+input[type="submit"] {
+    width: 100%; 
+    padding: 10px; 
+    background-color: green;
+    color: white; 
+    border: none;
+    border-radius: 5px; 
+    cursor: pointer;
+}
+
+
+p {
+    color: green; 
+    text-align: center;
+    font-weight: bold;
+    margin-top: 20px;
+}
+
