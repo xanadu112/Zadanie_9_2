@@ -22,21 +22,10 @@ def fetch_exchange_rates():
     
     return exchange_rates
 
-exchange_rates = {}
-if os.path.exists(CSV_FILE):
-    with open(CSV_FILE, 'r') as csvfile:
-        reader = csv.DictReader(csvfile)
-        for row in reader:
-            exchange_rates[row['code']] = float(row['bid'])
-
-if not exchange_rates:
-    exchange_rates = fetch_exchange_rates()
-
 @app.route("/", methods=['GET', 'POST'])
 def curr_calc():
-    global exchange_rates
-    
     if request.method == 'GET':
+        exchange_rates = fetch_exchange_rates()
         codes = list(exchange_rates.keys())
         return render_template("calc_form.html", codes=codes) 
     
